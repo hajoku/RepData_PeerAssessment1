@@ -1,8 +1,8 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
-author: "hajoku"
-date: "Friday, December 05, 2014"
-output: html_document
+output: 
+  html_document:
+    keep_md: true
 ---
 
 First, we need to load some libraries, set some settings and unzip and read the dataset.
@@ -12,7 +12,7 @@ library(dplyr)
 library(lattice)
 options(scipen=8) #scientific notation
 Sys.setlocale("LC_TIME", "English") #so that it says "Monday" etc 
-unzip("repdata-data-activity.zip")
+unzip("activity.zip")
 steps_data = read.csv("activity.csv")
 ```
 

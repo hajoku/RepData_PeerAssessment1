@@ -8,7 +8,7 @@ library(dplyr)
 library(lattice)
 options(scipen=8) #scientific notation
 Sys.setlocale("LC_TIME", "English") #so that it says "Monday" etc 
-unzip("repdata-data-activity.zip")
+unzip("activity.zip")
 steps_data = read.csv("activity.csv")
 ```
 
@@ -22,7 +22,7 @@ sum_steps[[2]] <- as.numeric(sum_steps[[2]])
 hist(sum_steps[[2]], breaks = 10, col = "red", main = "Nr of steps per day", xlab = "")
 ```
 
-![](./PA1_Template_files/figure-html/unnamed-chunk-2-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 ```r
 st_mean <- mean(sum_steps[[2]])
@@ -57,7 +57,7 @@ mean_steps = result1[[1]]
 plot(mean_steps[[1]], mean_steps[[2]], type ="l", main ="Mean steps per interval", xlab = "Interval", ylab ="Steps")
 ```
 
-![](./PA1_Template_files/figure-html/unnamed-chunk-4-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
 The most active interval is 835 with an average of 206.1698113 steps.
 
@@ -93,7 +93,7 @@ sum_steps2[[2]] <- as.numeric(sum_steps2[[2]])
 hist(sum_steps2[[2]], breaks = 10, col = "red", main = "Nr of steps per day", xlab = "")
 ```
 
-![](./PA1_Template_files/figure-html/unnamed-chunk-7-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
 
 ```r
 st_mean2 <- mean(sum_steps2[[2]])
@@ -139,4 +139,4 @@ names(mean_steps2) <- c("Interval","Steps", "daytype")
 xyplot(Steps ~ Interval| daytype , data = mean_steps2, layout = c(1,2), type="l")
 ```
 
-![](./PA1_Template_files/figure-html/unnamed-chunk-9-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
